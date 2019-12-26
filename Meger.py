@@ -1,13 +1,13 @@
-from requests import get
+import faster_than_requests as requests
 from modules.save import Save
 from sys import stdin
 def REQUEST(URLS):
 	for URL in URLS:
 		URL_ = URL.rstrip()
 		try:
-		    Response = get(URL_).text
+		    Response = requests.get2str(URL_)
 		    Save(URL_,Response)
-		except:
-			pass
+		except Exception as error:
+			print(error)
 
 REQUEST(stdin.readlines())
