@@ -7,7 +7,7 @@ def REQUEST(URLS):
 		try:
 		    Response = requests.get2str(URL_)
 		    Save(URL_,Response)
-		except Exception as error:
-			print(error)
+		except:
+			pass
 
 REQUEST(stdin.readlines())
